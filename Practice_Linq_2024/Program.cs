@@ -75,14 +75,17 @@ namespace Practice_Linq_2024
         {
             //Query 2: Вивести Friendly матчі збірної Італії, які вона провела з 2020 року.  
 
-            var selectedGames = games; // Корегуємо запит !!!
-
+            var selectedGames = games
+                            .Where(e => (e.Home_team == "Italy" || e.Away_team == "Italy")
+                                        && e.Tournament == "Friendly"
+                                        && e.Date.Year >= 2020)
+                            .ToList();
 
             // Перевірка
             Console.WriteLine("\n======================== QUERY 2 ========================");
 
             // див. приклад як має бути виведено:
-
+            PrintGames(selectedGames);
 
         }
 
