@@ -25,6 +25,13 @@ namespace Practice_Linq_2024
             Query10(games);
         }
 
+        static void PrintGames(List<FootballGame> games)
+        {
+            games
+                .ToList()
+                .ForEach(game => Console.WriteLine($"{game.Date:dd.MM.yyyy} {game.Home_team} - {game.Away_team}, Score: {game.Home_score} - {game.Away_score}, Country: {game.Country}"));
+
+        }
 
         // Десеріалізація json-файлу у колекцію List<FootballGame>
         static List<FootballGame> ReadFromFileJson(string path)
@@ -39,6 +46,8 @@ namespace Practice_Linq_2024
             return games;
 
         }
+
+
 
 
         // Запит 1
