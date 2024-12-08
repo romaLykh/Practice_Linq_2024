@@ -245,6 +245,10 @@ namespace Practice_Linq_2024
 
             // див. приклад як має бути виведено:
 
+            foreach (var game in selectedGames)
+            {
+                Console.WriteLine($"{game.MatchYear} {game.Game}, Result for team1: {game.Result}");
+            }
 
         }
 
